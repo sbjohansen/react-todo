@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 const List = () => {
   const columns = useSelector((state) => state.columns);
-
+  console.log(columns)
   return (
     <div className={styles.list}>
       <header className={styles.header}>
@@ -16,7 +16,8 @@ const List = () => {
       <p className={styles.description}>Interesting things I want to check out</p>
       <section className={styles.columns}>
         {columns.map((column) => (
-          <Column key={column.id} {...column} />
+          <Column key={column.id}
+          {...column} />
         ))}
       </section>
       <ColumnForm />
