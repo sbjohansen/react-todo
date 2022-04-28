@@ -16,13 +16,12 @@ const List = () => {
       <p className={styles.description}>Interesting things I want to check out</p>
       <section className={styles.columns}>
         {columns.map((column) => (
-          <Column key={column.id} {...column}  />
+          <Column key={column.id} {...column} />
         ))}
       </section>
-      <ColumnForm /> 
+      <ColumnForm />
     </div>
   );
 };
 
 export default List;
-  
