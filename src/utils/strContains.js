@@ -1,0 +1,1 @@
+export const strContains = (firstArg, secondArg) => firstArg.toLowerCase().includes(secondArg.toLowerCase())
