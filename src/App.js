@@ -24,6 +24,8 @@ const App = () => {
                   textAlign: 'center',
                 }}>
                 <p>There's nothing here!</p>
+                <p>ERROR 404</p>
+
               </main>
             }
           />
