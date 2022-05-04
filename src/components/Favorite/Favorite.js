@@ -1,10 +1,10 @@
-import PageTitle from "../PageTitle/PageTitle";
+import PageTitle from '../PageTitle/PageTitle';
 
 const Favorite = () => {
   return (
-  <div>
-    <PageTitle>Favorite</PageTitle>
-  </div>
+    <div>
+      <PageTitle>Favorite</PageTitle>
+    </div>
   );
 };
 

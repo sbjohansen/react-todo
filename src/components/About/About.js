@@ -1,11 +1,11 @@
-import PageTitle from "../PageTitle/PageTitle";
+import PageTitle from '../PageTitle/PageTitle';
 
 const About = () => {
-return (
+  return (
     <div>
       <PageTitle>About</PageTitle>
     </div>
-    );
+  );
 };
 
 export default About;
