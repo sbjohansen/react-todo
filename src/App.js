@@ -25,7 +25,6 @@ const App = () => {
                 }}>
                 <p>There's nothing here!</p>
                 <p>ERROR 404</p>
-
               </main>
             }
           />
