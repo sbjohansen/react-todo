@@ -2,13 +2,17 @@ import styles from './List.module.scss';
 import Column from './../Column/Column';
 import ColumnForm from './../ColumnForm/ColumnForm';
 import { useSelector } from 'react-redux';
-import { getAllColumns, getColumnsByList, getListById } from '../../redux/store';
+import { useParams } from 'react-router';
+import {getColumnsByList, getListById } from '../../redux/store';
+
 
 const List = () => {
-  const listData = useSelector(state => getListById(state, 1 )) 
-  const column = useSelector(state => getColumnsByList(state, 1))
- 
-  console.log('test', column);
+  const { listId } = useParams();
+
+  const listData = useSelector(state => getListById(state, listId))
+  const columns = useSelector(state => getColumnsByList(state, listId));
+
+  console.log('test', columns);
   return (
     <div className={styles.list}>
       <header className={styles.header}>
@@ -18,7 +22,7 @@ const List = () => {
       </header>
       <p className={styles.description}>{listData.description}</p>
       <section className={styles.columns}>
-        {column.map((column) => (
+        {columns.map((column) => (
           <Column key={column.id} {...column} />
         ))}
       </section>
