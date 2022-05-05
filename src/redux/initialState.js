@@ -11,7 +11,6 @@ const initialState = {
       title: 'Movies',
       icon: 'film',
       listId: '1',
-
     },
     {
       id: '3',
