@@ -20,8 +20,7 @@ const Card = (props) => {
         onClick={(e) => {
           e.preventDefault();
           setIsFavorite(!isFavorite);
-          dispatch(cardIsFavorite( cardId ));
-          console.log(cardId);
+          dispatch(cardIsFavorite(cardId));
         }}>
         <span className='fa fa-star-o' />
       </button>

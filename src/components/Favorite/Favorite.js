@@ -9,7 +9,6 @@ import { Navigate } from 'react-router-dom';
 const Favorite = (props) => {
   const cards = useSelector((state) => getIsFavorite(state));
 
-  console.log(cards);
   if (cards.length === 0) return <Navigate to='/' />;
 
   return (
