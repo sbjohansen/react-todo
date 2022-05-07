@@ -7,7 +7,7 @@ import clsx from 'clsx';
 const Card = (props) => {
   const dispatch = useDispatch();
 
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(props.isFavorite);
 
   const cardId = props.cardId;
 
@@ -20,7 +20,8 @@ const Card = (props) => {
         onClick={(e) => {
           e.preventDefault();
           setIsFavorite(!isFavorite);
-          dispatch(cardIsFavorite({ cardId }));
+          dispatch(cardIsFavorite( cardId ));
+          console.log(cardId);
         }}>
         <span className='fa fa-star-o' />
       </button>
