@@ -13,15 +13,13 @@ const Favorite = (props) => {
   if (cards.length === 0) return <Navigate to='/' />;
 
   return (
-    <div className={styles.favWrapper}>
+    <div>
       <PageTitle>Favorite</PageTitle>
-      <div className={styles.favWrapper}>
-        <ul className={styles.column}>
-          {cards.map((card) => (
-            <Card key={card.id} title={card.title} cardId={card.id} isFavorite={card.isFavorite} columnId={card.columnId} />
-          ))}
-        </ul>
-      </div>
+      <ul className={styles.column}>
+        {cards.map((card) => (
+          <Card key={card.id} title={card.title} cardId={card.id} isFavorite={card.isFavorite} columnId={card.columnId} />
+        ))}
+      </ul>
     </div>
   );
 };
