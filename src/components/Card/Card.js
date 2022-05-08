@@ -1,6 +1,7 @@
 import styles from './Card.module.scss';
 import { useDispatch } from 'react-redux';
-import { cardIsFavorite } from '../../redux/store';
+import { cardIsFavorite } from '../../redux/cardsRedux';
+import { removeCard } from '../../redux/cardsRedux';
 import { useState } from 'react';
 import clsx from 'clsx';
 
@@ -14,16 +15,27 @@ const Card = (props) => {
   return (
     <li className={styles.card}>
       {props.title}
-      <button
-        type='button'
-        className={clsx(styles.button, isFavorite && styles.isFavorite)}
-        onClick={(e) => {
-          e.preventDefault();
-          setIsFavorite(!isFavorite);
-          dispatch(cardIsFavorite(cardId));
-        }}>
-        <span className='fa fa-star-o' />
-      </button>
+      <div>
+        <button
+          type='button'
+          className={clsx(styles.button, isFavorite && styles.isFavorite)}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsFavorite(!isFavorite);
+            dispatch(cardIsFavorite(cardId));
+          }}>
+          <span className='fa fa-star-o' />
+        </button>
+        <button
+          type='button'
+          className={clsx(styles.button, styles.removeCard)}
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(removeCard(cardId));
+          }}>
+          <span className='fa fa-trash-o' />
+        </button>
+      </div>
     </li>
   );
 };
